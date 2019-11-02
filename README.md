@@ -2,6 +2,8 @@
 
 - [Github Page]()
 
+<br>
+
 ## 使用 Flex 伸縮特性安排組件
 
 如何排版遇到**內容數量不一致**但又要**兼顧對齊美觀**呢 ?
@@ -83,3 +85,75 @@ index.html
           </div>
         </div>
 ```
+
+<br>
+
+## Add Chart.js
+
+*選擇 Chart 的要點*
+
+1. 有沒有符合需求的圖表類型
+2. 資料結構是否易懂或易於變化
+3. 有沒有要支援 Responsive
+4. 授權
+
+授權部分像是 [highcharts](https://www.highcharts.com/) 本身免費 , 但要用於商業用途就需要 `license` !
+
+`Chart.js` 的標籤一定要使用 `canvas` 才可以
+
+```html
+<canvas id="barCanvas"></canvas>
+<canvas class="chart-item"></canvas>
+```
+
+<br>
+
+## 巢狀 Grid
+
+```html
+<div class="row align-items-end">
+	<div class="col-lg-8">
+		<div class="row">
+			<div class="col-lg-8 align-self-end"></div>
+			<div class="col-lg-4"></div>
+		</div>
+	</div>
+	<div class="col-lg-4"></div>
+</div>
+```
+
+<hr>
+
+`Flex 外容器屬性`
+
+- display
+- flex-flow
+	- flex-direction
+	- flex-wrap
+- justify-content
+- align-items
+
+<hr>
+
+`Flex 內元件屬性`
+
+- flex
+	- flex-grow
+	- flex-shrink
+	- flex-basis
+- order
+- align-self
+
+[圖解 - Flex](https://wcc723.github.io/css/2017/07/21/css-flex/)
+
+<br>
+
+## Bootstrap - Components - Progress
+
+[Progress](https://getbootstrap.com/docs/4.3/components/progress/)
+
+<br>
+
+
+
+  
