@@ -6,5 +6,10 @@ html {
   /* 最小不能低於 100vh 的裝置高 */
   /* 高度 ( navbar + footer + footer-margin-top + default-font-size ) */
   min-height: calc( 100vh - (52px + 52px + 42px + 14px) );
-  
+
+}
+@media (max-width: 320px) {
+  .h3-320 {
+    font-size: 1.7rem !important;
+  }
 }
