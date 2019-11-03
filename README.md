@@ -288,7 +288,7 @@ Require
 - `title="Tooltip on top"`
 - `script`
 
-option
+Option
 
 - `data-html="true"`
 
@@ -379,5 +379,104 @@ option
 [Split button dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/#split-button-dropdowns)
 
 將 ***不常用到*** 或 ***刪除訂單*** 放到下拉式選單
+
+<br>
+
+## Modal
+
+[樣式 - Live demo](https://getbootstrap.com/docs/4.0/components/modal/#live-demo)
+
+Require
+
+- `data-toggle="modal"`
+- `data-target="#editModal"`
+- `<!-- Modal -->`
+
+Option - [相關介紹](https://getbootstrap.com/docs/4.3/components/modal/#options)
+
+- `data-backdrop` : 開啟 modal 後防止點選畫面任何位置就關閉 modal
+	- `false` or `static`
+
+Custom
+
+- `data-title="快速下單"`
+- `data-item="超纖細肥皂 1盒"`
+
+<hr>
+
+```html
+		<button
+            class="btn btn-primary btn-sm"
+            type="button"
+            data-toggle="modal"
+            data-target="#editModal"
+            data-title="快速下單"
+            data-backdrop="false"
+          >
+            <i class="fas fa-shopping-cart"></i> 快速下單
+          </button>
+```
+
+```html
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<br>
+
+### 加入參數
+
+[Varying modal content](https://getbootstrap.com/docs/4.3/components/modal/#varying-modal-content)
+
+這個 modal 寫好就可以重複使用
+
+```javascript
+<script>
+	$(document).ready(function() {
+      
+	// 編輯的 Modal 事件
+        $('#editModal').on('show.bs.modal', function(event) {
+
+          // 觸發 modal 的 button 放入 變數 btn
+          var btn = $(event.relatedTarget);
+          console.log(btn);
+
+          // 取出 屬性 data-* 的資訊
+          var title = btn.data('title');
+          console.log('title', title);
+
+          var item = btn.data('item');
+          console.log('item', item);
+
+          var modal = $(this);
+
+          modal.find('.modal-title').text(title);
+          
+          modal.find('#item').attr('placeholder', item);
+        });
+        
+	});
+</script>
+```
+
+
 
 

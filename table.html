@@ -72,7 +72,14 @@
           </div>
         </div>
         <div class="col-md-9 text-right my-2 my-lg-0">
-          <button class="btn btn-primary btn-sm" type="button">
+          <button
+            class="btn btn-primary btn-sm"
+            type="button"
+            data-toggle="modal"
+            data-target="#editModal"
+            data-title="快速下單"
+            data-backdrop="false"
+          >
             <i class="fas fa-shopping-cart"></i> 快速下單
           </button>
         </div>
@@ -112,7 +119,15 @@
                   role="group"
                   aria-label="Basic example"
                 >
-                  <button type="button" class="btn btn-outline-secondary">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-toggle="modal"
+                    data-target="#editModal"
+                    data-title="編輯 超纖細肥皂 1盒"
+                    data-item="超纖細肥皂 1盒"
+                    data-backdrop="static"
+                  >
                     編輯
                   </button>
                   <button type="button" class="btn btn-outline-secondary">
@@ -132,7 +147,15 @@
                     <a class="dropdown-item" href="#">操作紀錄</a>
                     <a class="dropdown-item" href="#">資料匯出</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                    <a
+                      class="dropdown-item text-danger"
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#removeModal"
+                      data-title=" 超纖細肥皂 1盒"
+                      data-backdrop="static"
+                      >刪除訂單</a
+                    >
                   </div>
                 </div>
               </td>
@@ -155,7 +178,14 @@
                   role="group"
                   aria-label="Basic example"
                 >
-                  <button type="button" class="btn btn-outline-secondary">
+                  <button 
+                    type="button" 
+                    class="btn btn-outline-secondary" 
+                    data-toggle="modal"
+                    data-target="#editModal"
+                    data-title="編輯 (保證)無泡泡沐浴乳 5罐"
+                    data-item="(保證)無泡泡沐浴乳 5罐"
+                    data-backdrop="static">
                     編輯
                   </button>
                   <button type="button" class="btn btn-outline-secondary">
@@ -175,7 +205,14 @@
                     <a class="dropdown-item" href="#">操作紀錄</a>
                     <a class="dropdown-item" href="#">資料匯出</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                    <a 
+                      class="dropdown-item text-danger" 
+                      href="#" 
+                      data-toggle="modal"
+                      data-target="#removeModal"
+                      data-title=" (保證)無泡泡沐浴乳 5罐"
+                      data-backdrop="static"
+                    >刪除訂單</a>
                   </div>
                 </div>
               </td>
@@ -193,7 +230,14 @@
                   role="group"
                   aria-label="Basic example"
                 >
-                  <button type="button" class="btn btn-outline-secondary">
+                  <button 
+                    type="button" 
+                    class="btn btn-outline-secondary" 
+                    data-toggle="modal"
+                    data-target="#editModal"
+                    data-title="編輯 防滑燈罩 100個"
+                    data-item="防滑燈罩 100個"
+                    data-backdrop="static">
                     編輯
                   </button>
                   <button type="button" class="btn btn-outline-secondary">
@@ -213,7 +257,14 @@
                     <a class="dropdown-item" href="#">操作紀錄</a>
                     <a class="dropdown-item" href="#">資料匯出</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#">刪除訂單</a>
+                    <a 
+                      class="dropdown-item text-danger" 
+                      href="#" 
+                      data-toggle="modal"
+                      data-target="#removeModal"
+                      data-title=" 防滑燈罩 100個"
+                      data-backdrop="static"
+                    >刪除訂單</a>
                   </div>
                 </div>
               </td>
@@ -256,6 +307,131 @@
       六角學院後台管理系統
     </footer>
 
+    <!-- editModal -->
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="editModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="form-row">
+                <div class="col-12 mb-3">
+                  <label for="username">用戶名稱</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    id="username"
+                    placeholder="您的名字"
+                    required
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="您的信箱 xxx@gmail.com"
+                    required
+                  />
+                </div>
+                <div class="col-6">
+                  <label for="item">品項</label>
+                  <input type="text" class="form-control" id="item" placeholder="" readonly>
+                </div>
+                <div class="col-6">
+                  <label for="number">*數量</label>
+                  <select name="number" id="number" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10" selected>10</option>
+                  </select>
+                </div>
+              </div>
+            
+          </div>
+          <div class="modal-footer">
+            <!-- <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button> -->
+            <input type="reset" value="取消" class="btn btn-outline-primary">
+            <input type="submit" value="確定" class="btn btn-primary">
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- removeModal -->
+    <div
+      class="modal fade"
+      id="removeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="removeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="removeModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            是否確認刪除訂單
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              data-dismiss="modal"
+            >
+              否
+            </button>
+            <button type="button" class="btn btn-outline-danger w-50">是</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -276,10 +452,44 @@
 
     <script>
       $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip()
+
+        $('[data-toggle="tooltip"]').tooltip();
 
         // 編輯的 Modal 事件
-      })
+        $('#editModal').on('show.bs.modal', function(event) {
+
+          // 觸發 modal 的 button 放入 變數 btn
+          var btn = $(event.relatedTarget);
+          console.log(btn);
+
+          // 取出 屬性 data-* 的資訊
+          var title = btn.data('title');
+          console.log('title', title);
+
+          var item = btn.data('item');
+          console.log('item', item);
+
+          var modal = $(this);
+
+          modal.find('.modal-title').text(title);
+          
+          modal.find('#item').attr('placeholder', item);
+        });
+
+        // 刪除的 Modal 事件
+        $('#removeModal').on('show.bs.modal', function(event) {
+
+          var btn = $(event.relatedTarget);
+          console.log(btn);
+
+          var title = btn.data('title');
+          console.log(title);
+
+          var modal = $(this);
+
+          modal.find('.modal-title').text('確認刪除' + title);
+        });
+      });
     </script>
   </body>
 </html>
