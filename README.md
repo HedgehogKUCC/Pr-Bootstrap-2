@@ -232,7 +232,7 @@ index.html
 
 <br>
 
->[info] 有關 `金額` 都要對齊右邊
+有關 `金額` 都要對齊右邊
 
 *欄位寬度*
 
@@ -273,6 +273,58 @@ ex :
     ...
   </table>
 </div>
+```
+
+<br>
+
+## Tooltips
+
+[Tooltips](https://getbootstrap.com/docs/4.0/components/tooltips/)
+
+Require
+
+- `data-toggle="tooltip"` 
+- `data-placement="top"` 
+- `title="Tooltip on top"`
+- `script`
+
+option
+
+- `data-html="true"`
+
+<hr>
+
+有加上 `data-html="true"` 後
+
+就可以使用 `html標籤` --- `title="<em>按下 Enter 快速搜尋</em>"`
+
+```html
+	<div class="input-group">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              placeholder="Search for..."
+              data-toggle="tooltip"
+              data-placement="top"
+              data-html="true"
+              title="<em>按下 Enter 快速搜尋</em>"
+            />
+            <span class="input-group-btn">
+              <button class="btn btn-secondary btn-sm" type="button">
+                Go!
+              </button>
+            </span>
+          </div>
+```
+
+```javascript
+<script>
+      $(document).ready(function() {
+      
+        $('[data-toggle="tooltip"]').tooltip()
+
+      });
+</script>
 ```
 
 <br>
