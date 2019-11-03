@@ -45,7 +45,7 @@
 
 <br>
 
-dashboard 空間有限 , 又要放入很多不同內容與資料 , 為了節省空間會將文字縮小一點 !
+***Dashboard*** 空間有限 , 又要放入很多不同內容與資料 , 為了節省空間會將文字縮小一點 !
 
 all.css
 
@@ -108,7 +108,7 @@ index.html
 
 <br>
 
-## 巢狀 Grid
+### 巢狀 Grid
 
 ```html
 <div class="row align-items-end">
@@ -148,12 +148,136 @@ index.html
 
 <br>
 
-## Bootstrap - Components - Progress
+### Bootstrap - Components - Progress
 
 [Progress](https://getbootstrap.com/docs/4.3/components/progress/)
 
 <br>
 
+## 表格結構注意細節
+
+### sr-only
+
+只有螢幕閱讀器的人會知道有月份
+
+如果不是的話就會被隱藏但保有它的功能
+
+```html
+<label for="month" class="sr-only">月份</label>
+```
+
+<br>
+
+### Flex
+
+外層使用 `d-flex` 包住兩個區塊 `form-inline` `button`
+
+因為 `flex` 關係 , 就可以將兩個 `button` 使用 `ml-auto` 移到最右邊 .
+
+#### Dashboard 節省空間
+
+`form-control-sm` `btn-sm`
+
+```html
+		   <div class="d-flex mb-4">
+            <div class="form-inline">
+              <div class="form-group">
+                <label for="month" class="sr-only">月份</label>
+                <select
+                  name="month"
+                  id="month"
+                  class="form-control form-control-sm"
+                >
+                  <option value="...">... 月</option>
+                </select>
+              </div>
+            </div>
+            <div class="ml-auto">
+              <a href="#" class="btn btn-outline-secondary btn-sm">下載報表</a>
+              <a href="#" class="btn btn-outline-secondary btn-sm">訂單管理</a>
+            </div>
+          </div>
+```
+
+<br>
+
+### table 結構
+
+`th` 有幾個 `td` 就要有幾個 !!!
+
+不然就要使用 `colspan` 合併儲存格
+
+```html
+<table class="table">
+	<thead>
+		<tr>
+			<th>...</th>*7
+			...
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>...</td>*7
+			...
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="6">...</td>
+			<td>...</td>
+		</tr>
+	</tfoot>
+</table>
+```
+
+<br>
+
+>[info] 有關 `金額` 都要對齊右邊
+
+*欄位寬度*
+
+- 彈性百分比 (%)
+- 固定寬度 (px)
+
+建議
+
+先將 `固定寬度` 設定出來 , 彈性就不用讓它自適應 .
+
+寫在 `th` 表格就會全部套用上
+
+ex :
+
+```html
+<thead>
+	<tr>
+		<th width="50">日期</th>
+		<th>訂單數</th>
+		<th>退費數</th>
+		<th>出貨數</th>
+		<th>有問題貨品</th>
+		<th width="150">營業額</th>
+		<th width="150">淨利潤</th>
+	</tr>
+</thead>
+```
+
+### Responsive table
+
+[v4.3](https://getbootstrap.com/docs/4.3/content/tables/#responsive-tables)
+
+可解決 `table` 在比較小的螢幕裝置下 , 會自動產生 `x軸` 水平捲動 .
+
+```html
+<div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+```
+
+<br>
 
 
-  
+
+
+
