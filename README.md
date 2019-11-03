@@ -329,7 +329,38 @@ option
 
 <br>
 
+## 增加列表互動性
 
+[Hoverable rows](https://getbootstrap.com/docs/4.0/content/tables/#hoverable-rows)
+
+明顯讓使用者知道滑鼠現在在哪一列上面
+
+<br>
+
+[Contextual classes](https://getbootstrap.com/docs/4.0/content/tables/#contextual-classes)
+
+可標示
+ 
+- `出貨` `danger`
+- `未出貨` `warning`
+
+普遍性的 `已出貨` 就不用有色彩
+
+這樣才不會讓畫面混亂
+
+> 都是重點時 = 沒有重點
+
+<br>
+
+### progress
+
+[Animated stripes](https://getbootstrap.com/docs/4.0/components/progress/#animated-stripes)
+
+當頁面有很多 `Ajax` 在資料串接讀取時
+
+可以增加一個 **Loading** 使用 `progress bar`
+
+因為加上 `progress-bar-animated` 會比較吃 ***CPU*** 效能
 
 
 
