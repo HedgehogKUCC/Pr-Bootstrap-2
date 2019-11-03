@@ -362,5 +362,22 @@ option
 
 因為加上 `progress-bar-animated` 會比較吃 ***CPU*** 效能
 
+不要讓他常駐的出現 , 必要時出現就好 .
+
+<br>
+
+## 動態操作
+
+[Button group](https://getbootstrap.com/docs/4.0/components/button-group/)
+
+將按鈕視為一個群組 , 會省去按鈕與按鈕之間的空間 .
+
+細項的按鈕使用 `outline` 讓視覺感沒那麼重
+
+<br>
+
+[Split button dropdowns](https://getbootstrap.com/docs/4.0/components/dropdowns/#split-button-dropdowns)
+
+將 ***不常用到*** 或 ***刪除訂單*** 放到下拉式選單
 
 
