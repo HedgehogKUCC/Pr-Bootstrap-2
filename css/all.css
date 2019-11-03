@@ -1,3 +1,10 @@
 html {
   font-size: 14px;
 }
+.main {
+
+  /* 最小不能低於 100vh 的裝置高 */
+  /* 高度 ( navbar + footer + footer-margin-top + default-font-size ) */
+  min-height: calc( 100vh - (52px + 52px + 42px + 14px) );
+  
+}

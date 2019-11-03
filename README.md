@@ -477,6 +477,44 @@ Custom
 </script>
 ```
 
+<br>
+
+## Pagination & Footer
+
+[Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
+
+*pagination* 也是使用 `flex` 所以可以用 `justify-content-center` 來置中
+
+### Disabled and active states
+
+Pagination links are customizable for different circumstances. Use `.disabled` for links that appear un-clickable and `.active` to indicate the current page.
+
+```html
+<nav aria-label="Page navigation example">
+	<ul class="pagination justify-content-center">
+		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		<li class="page-item active"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Next</a></li>
+	</ul>
+</nav>
+```
+
+<br>
+
+將 `footer` 置於底部
+
+```css
+.main {
+
+  /* 最小不能低於 100vh 的裝置高 */
+  /* 高度 ( navbar + footer + footer-margin-top + default-font-size ) */
+  min-height: calc( 100vh - (52px + 52px + 42px + 14px) );
+  
+}
+```
+
 
 
 
